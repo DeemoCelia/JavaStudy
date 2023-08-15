@@ -1,3 +1,6 @@
+import java.io.FileInputStream;
+import java.io.FileOutputStream;
+import java.io.IOException;
 import java.util.*;
 
 public class HelloWorld {
@@ -72,6 +75,32 @@ public class HelloWorld {
 
         /*------------------------------------*/
 
+        Properties props = new Properties();
+        props.put("username","tom");
+        props.put("password","123456");
+        try
+        {
+            props.store(new FileOutputStream("config.properties"),null);
+        }
+        catch (IOException exception)
+        {
+            exception.printStackTrace();
+        }
+
+        props.clear();
+
+        try {
+            props.load(new FileInputStream("config.properties"));
+        }
+        catch(IOException exception)
+        {
+            exception.printStackTrace();
+        }
+
+	    for (Object o : props.values()) {
+		    str = (String) o;
+		    System.out.println("configs: " + str);
+	    }
 
     }
 }
