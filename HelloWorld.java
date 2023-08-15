@@ -20,7 +20,7 @@ public class HelloWorld {
 		/*------------------------------------*/
 
 		Enumeration<String> days;
-        Vector<String> dayNames = new Vector<String>();
+        Vector<String> dayNames = new Vector<>();
         dayNames.add("Sunday");
         dayNames.add("Monday");
         days = dayNames.elements();
@@ -39,7 +39,7 @@ public class HelloWorld {
         bits_.set(13);
         bits_.set(16);
         bits.or(bits_);
-        System.out.println(bits.toString());
+        System.out.println(bits);
 
         /*------------------------------------*/
 
@@ -57,7 +57,7 @@ public class HelloWorld {
         stack.add("1");
         stack.add("2");
         stack.push("3");
-        System.out.println("stack: " + stack.toString());
+        System.out.println("stack: " + stack);
         System.out.println("stack peek: " + stack.peek());
         System.out.println("stack search: " + stack.search("2"));
 
